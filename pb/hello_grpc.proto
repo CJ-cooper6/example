@@ -1,0 +1,21 @@
+
+syntax = "proto3";  // 版本声明
+
+option go_package = "./;hello_grpc";
+package hello_grpc;
+
+//请求消息
+message Req{
+  string message = 1;
+}
+
+//响应消息
+message Res{
+  string message = 1;
+}
+
+//定义服务
+service HelloGRPC{
+  rpc SayHi(Req)returns(Res);
+}
+
